@@ -10,8 +10,6 @@ namespace TP1Test
 {
     public class WypelnijBaze : Wypelnianie
     {
-     
-
         public void Wypelnij(DataContext dataContext)
         {
 
@@ -26,7 +24,7 @@ namespace TP1Test
             dataContext.Ksiazki.Add(ksiazka4.Id, ksiazka4);
 
             Wykaz czytelnik1 = new Wykaz(1, "Krzysztof", "Kosmala", "56780187", "Łódzka");
-            Wykaz czytelnik2 = new Wykaz(2, "Maciek", "Kozłowski", "56780666", "Pabianicka");
+            Wykaz czytelnik2 = new Wykaz(2, "Sebastian", "Marcinkowski", "56780666", "Brzeziny");
             Wykaz czytelnik3 = new Wykaz(3, "Tomasz", "Gromadko", "52231187", "Odrzanska");
             Wykaz czytelnik4 = new Wykaz(4, "Artur", "Badura", "87434887", "Joanny");
 
@@ -41,9 +39,9 @@ namespace TP1Test
             OpisStanu stan4 = new OpisStanu(4, ksiazka4, 5, 11, "Nowa");
 
             Zdarzenie zdarznie1 = new Zdarzenie(1,stan2,czytelnik3,1,new DateTime(2018,5,12) );
-            Zdarzenie zdarznie2 = new Zdarzenie(1, stan2, czytelnik4, 1, new DateTime(2018, 12, 13));
-            Zdarzenie zdarznie3 = new Zdarzenie(1, stan4, czytelnik2, 1, new DateTime(2018, 5, 17));
-            Zdarzenie zdarznie4 = new Zdarzenie(1, stan1, czytelnik1, 1, new DateTime(2018, 4, 1));
+            Zdarzenie zdarznie2 = new Zdarzenie(2, stan2, czytelnik4, 1, new DateTime(2018, 12, 13));
+            Zdarzenie zdarznie3 = new Zdarzenie(3, stan4, czytelnik2, 1, new DateTime(2018, 5, 17));
+            Zdarzenie zdarznie4 = new Zdarzenie(4, stan1, czytelnik1, 1, new DateTime(2018, 4, 1));
 
             dataContext.Wypozyczenia.Add(zdarznie1);
             dataContext.Wypozyczenia.Add(zdarznie2);
@@ -53,5 +51,5 @@ namespace TP1Test
 
             throw new NotImplementedException();
         }
-    }
+    }       
 }

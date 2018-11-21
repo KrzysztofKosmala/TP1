@@ -17,3 +17,6 @@ C:\Users\Krzysiek\Desktop\Repozytorium\C#\TP1\TP1Test\obj\Debug\TP1Test.csproj.C
 C:\Users\Krzysiek\Desktop\Repozytorium\C#\TP1\TP1Test\obj\Debug\TP1Test.csproj.CopyComplete
 C:\Users\Krzysiek\Desktop\Repozytorium\C#\TP1\TP1Test\obj\Debug\TP1Test.dll
 C:\Users\Krzysiek\Desktop\Repozytorium\C#\TP1\TP1Test\obj\Debug\TP1Test.pdb
+C:\Users\Sekwad\Documents\GitHub\TP1\TP1Test\obj\Debug\TP1Test.csprojAssemblyReference.cache
+C:\Users\Sekwad\Documents\GitHub\TP1\TP1Test\obj\Debug\TP1Test.csproj.CoreCompileInputs.cache
+C:\Users\Sekwad\Documents\GitHub\TP1\TP1Test\obj\Debug\TP1Test.pdb

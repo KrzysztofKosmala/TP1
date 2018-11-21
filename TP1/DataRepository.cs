@@ -16,100 +16,7 @@ namespace Library
             wyp.Wypelnij(DataContext);
         }
 
-        #region Czytelnik
-
-        public void DodajCzytelnika(Wykaz czytelnik)
-        {
-            if (czytelnik != null)
-                DataContext.Czytelnicy.Add(czytelnik);
-            else
-                throw new ArgumentNullException();
-        }
-       
-        public Wykaz PobierzCzytelnikaPoId(int id)
-        {
-            if (DataContext.Czytelnicy.Exists(x => x.Id == id))
-                return DataContext.Czytelnicy.First(x => x.Id == id);
-            else
-                return null;
-        }
-        public List<Wykaz> PobierzWszystkichCzytelnikow()
-        {
-            return DataContext.Czytelnicy;
-        }
-      
-        public bool UaktualnijCzytelnikaNaId(int id, Wykaz nowyCzytelnik)
-        {
-            if (nowyCzytelnik != null)
-            {
-                if (DataContext.Czytelnicy.Exists(x => x.Id == id))
-                {
-                    Wykaz czytelnik = DataContext.Czytelnicy.First(x => x.Id == id);
-                    czytelnik.Adres = nowyCzytelnik.Adres;
-                    czytelnik.Telefon = nowyCzytelnik.Telefon;
-                    czytelnik.Imie = nowyCzytelnik.Imie;
-                    czytelnik.Nazwisko = nowyCzytelnik.Nazwisko;
-                    return true;
-                }
-                return false;
-            }
-            else
-                throw new ArgumentNullException();
-        }
-    
-        public bool UsunCzytelnikaPoId(int id)
-        {
-            if (DataContext.Czytelnicy.Exists(x => x.Id == id))
-            {
-                Wykaz czytelnik = DataContext.Czytelnicy.First(x => x.Id == id);
-                return DataContext.Czytelnicy.Remove(czytelnik);
-            }
-            return false;
-        }
-        #endregion
         
-        #region Ksiazka
-        public void DodajKsiazke(Katalog ksiazka)
-        {
-            if (ksiazka != null)
-            { 
-                DataContext.Ksiazki.Add(ksiazka.Id, ksiazka);
-            }
-            else
-                throw new ArgumentNullException();
-        }
-        public Katalog PobierzKsiazkePoId(int id)
-        {
-            return DataContext.Ksiazki[id];
-        }
-        public Dictionary<int, Katalog> PobierzWszystkieKsiazki()
-        {
-            return DataContext.Ksiazki;
-        }
-        public void UaktualnijKsiazkePoId(int id, Katalog nowaKsiazka)
-        {
-            if (nowaKsiazka != null)
-            {
-            
-                Katalog product = DataContext.Ksiazki[id];
-                if (product != null)
-                {
-                    product.Opis = nowaKsiazka.Opis;
-                    product.Autor = nowaKsiazka.Autor;
-                    product.Imie = nowaKsiazka.Imie;
-                }
-                else
-                    throw new NullReferenceException();
-            }
-            else
-                throw new ArgumentNullException();
-        }
-        public bool UsunKsiazkePoId(int id)
-        {
-            return DataContext.Ksiazki.Remove(id);
-        }
-        #endregion
-
         #region OpisStanu
         public void DodajOpisStanu(OpisStanu opisStanu)
         {
@@ -160,35 +67,35 @@ namespace Library
             return false;
         }
         #endregion
-        
+
         #region Zdarzenie
         public void DodajZdarzenie(Zdarzenie zdarzenie)
         {
             if (zdarzenie != null)
-                DataContext.Wypozyczenie.Add(zdarzenie);
+                DataContext.Wypozyczenia.Add(zdarzenie);
             else
                 throw new ArgumentNullException();
         }
 
         public Zdarzenie PobierzZdarzeniePoId(int id)
         {
-            if (DataContext.Wypozyczenie.Any(x => x.Id == id))
-                return DataContext.Wypozyczenie.First(x => x.Id == id);
+            if (DataContext.Wypozyczenia.Any(x => x.Id == id))
+                return DataContext.Wypozyczenia.First(x => x.Id == id);
             else
                 return null;
         }
         public ObservableCollection<Zdarzenie> PobierzWszystkieZdarzenia()
         {
-            return DataContext.Wypozyczenie;
+            return DataContext.Wypozyczenia;
         }
        
         public bool UaktualnijZdarzeniePoId(int id, Zdarzenie noweWypozyczenie)
         {
             if (noweWypozyczenie != null)
             {
-                if (DataContext.Wypozyczenie.Any(x => x.Id == id))
+                if (DataContext.Wypozyczenia.Any(x => x.Id == id))
                 {
-                    Zdarzenie wyp = DataContext.Wypozyczenie.First(x => x.Id == id);
+                    Zdarzenie wyp = DataContext.Wypozyczenia.First(x => x.Id == id);
                     wyp.Wykaz = noweWypozyczenie.Wykaz;
                     wyp.DataWypozyczenia = noweWypozyczenie.DataWypozyczenia;
                     wyp.Opisstanu = noweWypozyczenie.Opisstanu;
@@ -203,10 +110,104 @@ namespace Library
   
         public bool UsunZdarzeniePoId(int id)
         {
-            if (DataContext.Wypozyczenie.Any(x => x.Id == id))
+            if (DataContext.Wypozyczenia.Any(x => x.Id == id))
             {
-                Zdarzenie order = DataContext.Wypozyczenie.First(x => x.Id == id);
-                return DataContext.Wypozyczenie.Remove(order);
+                Zdarzenie order = DataContext.Wypozyczenia.First(x => x.Id == id);
+                return DataContext.Wypozyczenia.Remove(order);
+            }
+            return false;
+        }
+        #endregion
+
+        #region Ksiazka
+        public void DodajKsiazke(Katalog ksiazka)
+        {
+            if (ksiazka != null)
+            { 
+                DataContext.Ksiazki.Add(ksiazka.Id, ksiazka);
+            }
+            else
+                throw new ArgumentNullException();
+        }
+        public Katalog PobierzKsiazkePoId(int id)
+        {
+            return DataContext.Ksiazki[id];
+        }
+        public Dictionary<int, Katalog> PobierzWszystkieKsiazki()
+        {
+            return DataContext.Ksiazki;
+        }
+        public void UaktualnijKsiazkePoId(int id, Katalog nowaKsiazka)
+        {
+            if (nowaKsiazka != null)
+            {
+            
+                Katalog product = DataContext.Ksiazki[id];
+                if (product != null)
+                {
+                    product.Opis = nowaKsiazka.Opis;
+                    product.Autor = nowaKsiazka.Autor;
+                    product.Nazwa = nowaKsiazka.Nazwa;
+                }
+                else
+                    throw new NullReferenceException();
+            }
+            else
+                throw new ArgumentNullException();
+        }
+        public bool UsunKsiazkePoId(int id)
+        {
+            return DataContext.Ksiazki.Remove(id);
+        }
+        #endregion
+
+        #region Czytelnik
+
+        public void DodajCzytelnika(Wykaz czytelnik)
+        {
+            if (czytelnik != null)
+                DataContext.Czytelnicy.Add(czytelnik);
+            else
+                throw new ArgumentNullException();
+        }
+
+        public Wykaz PobierzCzytelnikaPoId(int id)
+        {
+            if (DataContext.Czytelnicy.Exists(x => x.Id == id))
+                return DataContext.Czytelnicy.First(x => x.Id == id);
+            else
+                return null;
+        }
+        public List<Wykaz> PobierzWszystkichCzytelnikow()
+        {
+            return DataContext.Czytelnicy;
+        }
+
+        public bool UaktualnijCzytelnikaNaId(int id, Wykaz nowyCzytelnik)
+        {
+            if (nowyCzytelnik != null)
+            {
+                if (DataContext.Czytelnicy.Exists(x => x.Id == id))
+                {
+                    Wykaz czytelnik = DataContext.Czytelnicy.First(x => x.Id == id);
+                    czytelnik.Adres = nowyCzytelnik.Adres;
+                    czytelnik.Telefon = nowyCzytelnik.Telefon;
+                    czytelnik.Imie = nowyCzytelnik.Imie;
+                    czytelnik.Nazwisko = nowyCzytelnik.Nazwisko;
+                    return true;
+                }
+                return false;
+            }
+            else
+                throw new ArgumentNullException();
+        }
+
+        public bool UsunCzytelnikaPoId(int id)
+        {
+            if (DataContext.Czytelnicy.Exists(x => x.Id == id))
+            {
+                Wykaz czytelnik = DataContext.Czytelnicy.First(x => x.Id == id);
+                return DataContext.Czytelnicy.Remove(czytelnik);
             }
             return false;
         }

@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace TP1
+namespace Library
 {
-    interface Wypelnianie
+    public interface Wypelnianie
     {
+        void Wypelnij(DataContext dataContext);
     }
 }

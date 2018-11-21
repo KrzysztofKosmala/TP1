@@ -10,31 +10,16 @@ namespace Library
     {
         public int Id { get; set; }
         public string Autor { get; set; }
-        public string Imie { get; set; }
+        public string Nazwa { get; set; }
         public string Opis { get; set; }
 
-        public Katalog(int id, string imie, string autor, string opis)
+        public Katalog(int id, string nazwa, string autor, string opis)
         {
             Id = id;
-            Imie = imie;
+            Nazwa = nazwa;
             Autor = autor;
             Opis = opis;
         }
-
-        public override string ToString()
-        {
-            return string.Format("[{0}] {1} : {2} ({3})");
-        }
-        
-        public override bool Equals(object obj)
-        {
-            if (obj != null && obj is Katalog)
-            {
-                Katalog prd = obj as Katalog;
-                if (Id == prd.Id)
-                    return true;
-            }
-            return false;
-        }
+      
     }
 }

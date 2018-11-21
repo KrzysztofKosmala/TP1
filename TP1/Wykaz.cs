@@ -28,15 +28,6 @@ namespace Library
             return string.Format("[{0}] {1} {2} ({3} ; {4})", Id, Imie, Nazwisko, Telefon, Adres);
         }
 
-        public override bool Equals(object obj)
-        {
-            if (obj != null && obj is Wykaz)
-            {
-                Wykaz clt = obj as Wykaz;
-                if (Id == clt.Id)
-                    return true;
-            }
-            return false;
-        }
+ 
     }
 }

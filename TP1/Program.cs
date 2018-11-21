@@ -7,9 +7,9 @@ namespace TP1
 {
     class Program
     {
-        public void Main()
+        static void Main(string[] args)
         {
-
+            
         }
     }
 }

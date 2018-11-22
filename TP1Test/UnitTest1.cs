@@ -281,4 +281,29 @@ namespace TP1Test
 
         #endregion
     }
+
+    [TestClass]
+    public class UnitTest2
+    {
+        [TestMethod]
+        public void wypelnienie2_100()
+        {
+            DataRepository repoTest = new DataRepository(new WypelnianieSposob2(100));
+            Assert.AreEqual(100, repoTest.PobierzWszystkichCzytelnikow().Count);
+        }
+
+        [TestMethod]
+        public void wypelnienie2_1000()
+        {
+            DataRepository repoTest = new DataRepository(new WypelnianieSposob2(1000));
+            Assert.AreEqual(1000, repoTest.PobierzWszystkichCzytelnikow().Count);
+        }
+
+        [TestMethod]
+        public void wypelnienie2_10000()
+        {
+            DataRepository repoTest = new DataRepository(new WypelnianieSposob2(10000));
+            Assert.AreEqual(10000, repoTest.PobierzWszystkichCzytelnikow().Count);
+        }
+    }
 }

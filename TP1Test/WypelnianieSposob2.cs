@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace TP1Test
 {
-    class WypelnianieSposob2 : Wypelnianie
+    public class WypelnianieSposob2 : Wypelnianie
     {
 
         int IleRekordow;
         Random r;
         int rInt;
 
-        WypelnianieSposob2(int IleRekordow)
+        public WypelnianieSposob2(int IleRekordow)
         {
 
             this.IleRekordow = IleRekordow;

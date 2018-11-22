@@ -290,6 +290,9 @@ namespace TP1Test
         {
             DataRepository repoTest = new DataRepository(new WypelnianieSposob2(100));
             Assert.AreEqual(100, repoTest.PobierzWszystkichCzytelnikow().Count);
+            Assert.AreEqual(100, repoTest.PobierzWszystkieKsiazki().Count);
+            Assert.AreEqual(100, repoTest.PobierzWszystkieOpisyStanu().Count);
+            Assert.AreEqual(100, repoTest.PobierzWszystkieZdarzenia().Count);
         }
 
         [TestMethod]
@@ -297,6 +300,11 @@ namespace TP1Test
         {
             DataRepository repoTest = new DataRepository(new WypelnianieSposob2(1000));
             Assert.AreEqual(1000, repoTest.PobierzWszystkichCzytelnikow().Count);
+            Assert.AreEqual(1000, repoTest.PobierzWszystkieKsiazki().Count);
+            Assert.AreEqual(1000, repoTest.PobierzWszystkieOpisyStanu().Count);
+            Assert.AreEqual(1000, repoTest.PobierzWszystkieZdarzenia().Count);
+
+
         }
 
         [TestMethod]
@@ -304,6 +312,9 @@ namespace TP1Test
         {
             DataRepository repoTest = new DataRepository(new WypelnianieSposob2(10000));
             Assert.AreEqual(10000, repoTest.PobierzWszystkichCzytelnikow().Count);
+            Assert.AreEqual(10000, repoTest.PobierzWszystkieKsiazki().Count);
+            Assert.AreEqual(10000, repoTest.PobierzWszystkieOpisyStanu().Count);
+            Assert.AreEqual(10000, repoTest.PobierzWszystkieZdarzenia().Count);
         }
     }
 }

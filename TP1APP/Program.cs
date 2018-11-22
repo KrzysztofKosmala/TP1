@@ -12,8 +12,7 @@ namespace TP1APP
     {
         public static void Main(string[] args)
         {
-            DataRepository repo = new DataRepository(new WypelnianieSposob2(100));
-            Console.WriteLine(repo.PobierzWszystkieZdarzenia());
+           
         }
     }
 }

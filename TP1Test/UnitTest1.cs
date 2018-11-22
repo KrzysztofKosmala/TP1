@@ -50,11 +50,10 @@ namespace TP1Test
 
             Assert.AreNotEqual(stan.Id, nowystan.Id);
             Assert.AreNotEqual(stan.Ksiazka, nowystan.Ksiazka);
-            Assert.AreNotEqual(stan.Stan, nowystan.Stan);
             Assert.AreNotEqual(stan.DostepnaIlosc, nowystan.DostepnaIlosc);
             Assert.AreNotEqual(stan.Cena, nowystan.Cena);
 
-            Assert.AreEqual(true, repoTest.UaktualnijOpisStanuPoId(0, nowystan));
+            Assert.AreEqual(true,repoTest.UaktualnijOpisStanuPoId(1, nowystan));
 
             Assert.AreNotEqual(stan.Id, nowystan.Id);
             Assert.AreEqual(stan.Ksiazka, nowystan.Ksiazka);
@@ -85,6 +84,7 @@ namespace TP1Test
             OpisStanu stan = new OpisStanu(5, ksiazka, 5, 10, "Nowa");
             Wykaz czytelnik = new Wykaz(4, "Artur", "Gromadko", "87434997", "Belchatów");
             Zdarzenie zdarzenie = new Zdarzenie(5, stan, czytelnik, 1, new DateTime(2018, 6, 12));
+            repoTest.DodajZdarzenie(zdarzenie);
             Assert.AreEqual(5, repoTest.PobierzWszystkieZdarzenia().Count);
         }
 
@@ -119,17 +119,16 @@ namespace TP1Test
             DataRepository repoTest = new DataRepository(new WypelnijBaze());
             Katalog ksiazka = new Katalog(5, "C# programowanie", "Krzysztof", "Brak");
             OpisStanu stan = new OpisStanu(5, ksiazka, 5, 10, "Nowa");
-            Wykaz czytelnik = new Wykaz(4, "Artur", "Gromadko", "87434997", "Belchatów");
+            Wykaz czytelnik = new Wykaz(5, "Artur", "Gromadko", "87434997", "Belchatów");
             Zdarzenie noweZdarzenie = new Zdarzenie(5, stan, czytelnik, 1, new DateTime(2018, 6, 12));
             Zdarzenie zdarzenie = repoTest.PobierzZdarzeniePoId(1);
 
             Assert.AreNotEqual(zdarzenie.Id, noweZdarzenie.Id);
-            Assert.AreNotEqual(zdarzenie.Ilosc, noweZdarzenie.Ilosc);
             Assert.AreNotEqual(zdarzenie.Opisstanu, noweZdarzenie.Opisstanu);
             Assert.AreNotEqual(zdarzenie.Wykaz, noweZdarzenie.Wykaz);
             Assert.AreNotEqual(zdarzenie.DataWypozyczenia, noweZdarzenie.DataWypozyczenia);
 
-            Assert.AreEqual(true, repoTest.UaktualnijZdarzeniePoId(0,zdarzenie));
+            Assert.AreEqual(true, repoTest.UaktualnijZdarzeniePoId(1,noweZdarzenie));
 
             Assert.AreNotEqual(zdarzenie.Id, noweZdarzenie.Id);
             Assert.AreEqual(zdarzenie.Ilosc, noweZdarzenie.Ilosc);
@@ -233,19 +232,19 @@ namespace TP1Test
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        [ExpectedException(typeof(ArgumentNullException))]
         public void PobierzCzytelnikaPoId_ArgumentPozaZakresem()
         {
             DataRepository repoTest = new DataRepository(new WypelnijBaze());
-            repoTest.PobierzCzytelnikaPoId(-2);
+            repoTest.PobierzCzytelnikaPoId(-5);
+            
         }
 
         [TestMethod]
-        //public void PobierzWszystkichCzytelników()
-        public void TestMethod1()
+        public void PobierzWszystkichCzytelników()
         {
             DataRepository repoTest = new DataRepository(new WypelnijBaze());
-            Assert.AreEqual(4, repoTest.PobierzWszystkichCzytelnikow());
+            Assert.AreEqual(4, repoTest.PobierzWszystkichCzytelnikow().Count);
         }
 
         [TestMethod]
@@ -275,9 +274,9 @@ namespace TP1Test
         public void UsunCzytelnikaPoId()
         {
             DataRepository repoTest = new DataRepository(new WypelnijBaze());
-            Assert.AreEqual(4, repoTest.PobierzWszystkichCzytelnikow());
+            Assert.AreEqual(4, repoTest.PobierzWszystkichCzytelnikow().Count);
             Assert.AreNotEqual(false, repoTest.UsunCzytelnikaPoId(1));
-            Assert.AreEqual(3, repoTest.PobierzWszystkichCzytelnikow());
+            Assert.AreEqual(3, repoTest.PobierzWszystkichCzytelnikow().Count);
         }
 
         #endregion

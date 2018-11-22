@@ -176,7 +176,7 @@ namespace Library
             if (DataContext.Czytelnicy.Exists(x => x.Id == id))
                 return DataContext.Czytelnicy.First(x => x.Id == id);
             else
-                return null;
+                throw new ArgumentNullException();
         }
         public List<Wykaz> PobierzWszystkichCzytelnikow()
         {

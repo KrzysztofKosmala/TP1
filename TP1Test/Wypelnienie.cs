@@ -40,6 +40,11 @@ namespace TP1Test
             OpisStanu stan3 = new OpisStanu(3, ksiazka3, 4, 13, "Zniszczona");
             OpisStanu stan4 = new OpisStanu(4, ksiazka4, 5, 11, "Nowa");
 
+            dataContext.OpisStanu.Add(stan1);
+            dataContext.OpisStanu.Add(stan2);
+            dataContext.OpisStanu.Add(stan3);
+            dataContext.OpisStanu.Add(stan4);
+
             Zdarzenie zdarznie1 = new Zdarzenie(1,stan2,czytelnik3,1,new DateTime(2018,5,12) );
             Zdarzenie zdarznie2 = new Zdarzenie(1, stan2, czytelnik4, 1, new DateTime(2018, 12, 13));
             Zdarzenie zdarznie3 = new Zdarzenie(1, stan4, czytelnik2, 1, new DateTime(2018, 5, 17));
@@ -51,7 +56,7 @@ namespace TP1Test
             dataContext.Wypozyczenia.Add(zdarznie4);
 
 
-            throw new NotImplementedException();
+            
         }
     }
 }

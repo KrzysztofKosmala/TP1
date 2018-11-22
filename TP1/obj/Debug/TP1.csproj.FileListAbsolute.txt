@@ -10,3 +10,9 @@ C:\Users\Sekwad\Documents\GitHub\TP1\TP1\obj\Debug\TP1.pdb
 C:\Users\Sekwad\Documents\GitHub\TP1\TP1\bin\Debug\TP1.dll
 C:\Users\Sekwad\Documents\GitHub\TP1\TP1\bin\Debug\TP1.pdb
 C:\Users\Sekwad\Documents\GitHub\TP1\TP1\obj\Debug\TP1.dll
+C:\Users\Krzysiek\Desktop\Repozytorium\C#\TP\TP1\bin\Debug\TP1.dll
+C:\Users\Krzysiek\Desktop\Repozytorium\C#\TP\TP1\bin\Debug\TP1.pdb
+C:\Users\Krzysiek\Desktop\Repozytorium\C#\TP\TP1\obj\Debug\TP1.csprojAssemblyReference.cache
+C:\Users\Krzysiek\Desktop\Repozytorium\C#\TP\TP1\obj\Debug\TP1.csproj.CoreCompileInputs.cache
+C:\Users\Krzysiek\Desktop\Repozytorium\C#\TP\TP1\obj\Debug\TP1.dll
+C:\Users\Krzysiek\Desktop\Repozytorium\C#\TP\TP1\obj\Debug\TP1.pdb

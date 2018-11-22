@@ -4,3 +4,9 @@ C:\Users\Krzysiek\Desktop\Repozytorium\C#\TP1\TP1\bin\Debug\TP1.exe
 C:\Users\Krzysiek\Desktop\Repozytorium\C#\TP1\TP1\bin\Debug\TP1.pdb
 C:\Users\Krzysiek\Desktop\Repozytorium\C#\TP1\TP1\obj\Debug\TP1.exe
 C:\Users\Krzysiek\Desktop\Repozytorium\C#\TP1\TP1\obj\Debug\TP1.pdb
+C:\Users\Sekwad\Documents\GitHub\TP1\TP1\obj\Debug\TP1.csprojAssemblyReference.cache
+C:\Users\Sekwad\Documents\GitHub\TP1\TP1\obj\Debug\TP1.csproj.CoreCompileInputs.cache
+C:\Users\Sekwad\Documents\GitHub\TP1\TP1\obj\Debug\TP1.pdb
+C:\Users\Sekwad\Documents\GitHub\TP1\TP1\bin\Debug\TP1.dll
+C:\Users\Sekwad\Documents\GitHub\TP1\TP1\bin\Debug\TP1.pdb
+C:\Users\Sekwad\Documents\GitHub\TP1\TP1\obj\Debug\TP1.dll

@@ -11,7 +11,7 @@ namespace Library
     {
         protected DataContext DataContext = new DataContext();
 
-        DataRepository(Wypelnianie wyp)
+        public DataRepository(Wypelnianie wyp)
         {
             wyp.Wypelnij(DataContext);
         }

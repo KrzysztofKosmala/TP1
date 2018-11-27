@@ -23,6 +23,10 @@ namespace Library
             Stan = stan;
         }
 
-     
+        public override string ToString()
+        {
+            return string.Format("[{0}] Id Książki :{1}  Dostępna ilość: {2}  Cena: {3} stan: {4}", Id, Ksiazka.Id, DostepnaIlosc, Cena, Stan);
+        }
+
     }
 }

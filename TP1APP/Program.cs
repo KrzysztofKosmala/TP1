@@ -12,7 +12,12 @@ namespace TP1APP
     {
         public static void Main(string[] args)
         {
-           
+            // DataRepository repo = new DataRepository(new WypelnijBaze());
+            // DataService service = new DataService(repo);
+            // service.WypiszWszystko();
+            // service.WyszukajPoNazwie("2 Wojna");
+            // service.WypiszKsiazki(repo.PobierzWszystkieKsiazki());
+            // Console.ReadKey();
         }
     }
 }

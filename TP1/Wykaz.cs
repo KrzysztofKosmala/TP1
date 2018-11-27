@@ -25,7 +25,7 @@ namespace Library
 
         public override string ToString()
         {
-            return string.Format("[{0}] {1} {2} ({3} ; {4})", Id, Imie, Nazwisko, Telefon, Adres);
+            return string.Format("[{0}] Imie: {1} Nazwisko: {2} ({3} ; {4})", Id, Imie, Nazwisko, Telefon, Adres);
         }
 
  

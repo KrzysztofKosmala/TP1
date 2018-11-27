@@ -25,7 +25,7 @@ namespace Library
         
         public override string ToString()
         {
-            return string.Format("[{0}] {1} - {2} ({3} ; {4})", Id, Opisstanu.Id, Wykaz.Id, Ilosc, DataWypozyczenia);
+            return string.Format("[{0}] Opis Stanu: {1} Id Czytelnika:  {2} Ilość: {3} DataWypożyczenia:  {4})", Id, Opisstanu, Wykaz.Id, Ilosc, DataWypozyczenia);
         }
 
 
